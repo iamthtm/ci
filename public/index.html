@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>BAN NAI JIN</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body ng-controller="TodoListController as todoList" >
+
+	<header>
+
+		<div id="logo" style="width:100%;" align="left">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-logo.svg" alt="Homepage"/>
+      <a href="" style="padding-left:20px;font-size:3rem;color:white;">BAN-NAI-JIN</a>
+    </div>
+
+	</header>
+	<main>
+		<ul id="cd-gallery-items" class="cd-container">
+			<li>
+				<a href=""><img src="image/1.jpg" id = "b1" alt="Preview image" ng-click="todoList.add(1,'Harry Potter เล่ม 1',100)" ></a>
+        <br>
+        <span  style="margin-left: 20px;">Harry Potter เล่ม 1</span>
+        <span style="margin-left: 10px;">฿100 </span>
+      </li>
+      <li>
+				<a href=""><img src="image/2.jpg" id = "b2" alt="Preview image" ng-click="todoList.add(2,'Harry Potter เล่ม 2',100)"></a>
+        <br>
+        <span style="margin-left: 20px;">Harry Potter เล่ม 2</span>
+        <span style="margin-left: 10px;">฿100 </span>
+      </li>
+      <li>
+				<a href=""><img src="image/3.jpg" id = "b3" alt="Preview image" ng-click="todoList.add(3,'Harry Potter เล่ม 3',100)"></a>
+        <br>
+        <span style="margin-left: 20px;">Harry Potter เล่ม 3</span>
+        <span style="margin-left: 10px;">฿100 </span>
+    	</li>
+      <li>
+				<a href=""><img src="image/4.jpg" id = "b4" alt="Preview image" ng-click="todoList.add(4,'Harry Potter เล่ม 4',100)"></a>
+        <br>
+        <span style="margin-left: 20px;">Harry Potter เล่ม 4</span>
+        <span style="margin-left: 10px;">฿100 </span>
+      </li>
+      <li>
+				<a href=""><img src="image/5.jpg" id = "b5" alt="Preview image" ng-click="todoList.add(5,'Harry Potter เล่ม 5',100)"></a>
+        <br>
+        <span style="margin-left: 20px;">Harry Potter เล่ม 5</span>
+        <span style="margin-left: 10px;">฿100 </span>
+    	</li>
+      <li>
+				<a href=""><img src="image/6.jpg" id = "b6" alt="Preview image" ng-click="todoList.add(6,'Harry Potter เล่ม 6',100)"></a>
+        <br>
+        <span style="margin-left: 20px;">Harry Potter เล่ม 6</span>
+        <span style="margin-left: 10px;">฿100 </span>
+    	</li>
+      <li style="display:block;"></li>
+      <li style="display:block;"></li>
+      <li style="margin-top:-30px">
+				<a href=""><img src="image/7.jpg" id = "b7" alt="Preview image" ng-click="todoList.add(7,'Harry Potter เล่ม 7',100)"></a>
+        <br>
+        <span style="margin-left: 20px;">Harry Potter เล่ม 7</span>
+        <span style="margin-left: 10px;">฿100 </span>
+    	</li>
+
+		</ul>
+	</main>
+
+  <div id="cd-cart" class="active speed-in">
+		<h2>Cart</h2>
+    <table width="100%" >
+      <tr >
+        <th width="20px" style="padding-left:25px;padding-bottom: 10px;padding-top: 10px;">Count</th>
+        <th>Namebook</th>
+        <th width="25px" style="padding-right:25px;padding-bottom: 10px;padding-top: 10px;">Price</th>
+      </tr>
+      <tr ng-repeat="show in todoList.sumbook">
+        <h2><td width="20px" style="padding-left:25px;padding-bottom: 10px;padding-top: 10px;" align="center">{{show.countbook}}</td>
+        <td align="center">{{show.name}}</td>
+        <td width="25px" style="padding-right:25px;padding-bottom: 10px;padding-top: 10px;">฿{{show.price*show.countbook}}</td></h2>
+      </tr>
+    </table>
+		<div class="cd-cart-total">
+      <hr>
+      <p>Sum of Price <span>฿{{todoList.showTotal}}</span></p><hr>
+      <p>Discount <span id="discountTotal">฿{{todoList.bookDiscountTotal}}</span></p>
+      <hr>
+			<p>Total <span>฿{{todoList.showTotal-todoList.bookDiscountTotal}}</span></p>
+      <hr>
+		</div> <!-- cd-cart-total -->
+		<a href="index.html" class="checkout-btn">Checkout</a>
+	</div> <!-- cd-cart -->
+
+  </body>
+</html>

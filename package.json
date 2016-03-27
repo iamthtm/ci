@@ -1,14 +1,33 @@
 {
-  "name": "ci",
+  "name": "mid",
   "version": "1.0.0",
-  "description": "",
-  "main": "test.js",
+  "description": "``` $ sudo npm install ``` ##How to start server ``` $ sudo npm start ``` ##How to test ``` $ sudo npm test ``` ##Heroku => ``` https://fast-citadel-32622.herokuapp.com/ ```",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "standard": "^6.0.8"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "mocha-generators": "^1.2.0",
+    "nightmare": "^2.2.0"
+  },
   "scripts": {
-    "test": "node test.js"
+    "test": "make test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamthtm/mid_harry.git"
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "chai": "^3.5.0"
-  }
+  "bugs": {
+    "url": "https://github.com/iamthtm/mid_harry/issues"
+  },
+  "homepage": "https://github.com/iamthtm/mid_harry#readme"
 }
